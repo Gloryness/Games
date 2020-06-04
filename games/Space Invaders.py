@@ -6,31 +6,31 @@ import random
 import time
 
 ################################################################################ Images
-alienimage = 'R:/# Python 3.8/Python Saves/Games/Images/Alien.gif'
-bulletimage = 'R:/# Python 3.8/Python Saves/Games/Images/Bullet.gif'
-playerimage = 'R:/# Python 3.8/Python Saves/Games/Images/Rocket.gif'
-bulletspeed = 'R:/# Python 3.8/Python Saves/Games/Images/BulletSpeed.gif'
-rocketspeed = 'R:/# Python 3.8/Python Saves/Games/Images/PlayerSpeed.gif'
-alien2image = 'R:/# Python 3.8/Python Saves/Games/Images/AlienSpeed.gif'
-rewindtime = 'R:/# Python 3.8/Python Saves/Games/Images/RewindTime.gif'
-oppositeimage = 'R:/# Python 3.8/Python Saves/Games/Images/Opposite.gif'
-prestigeimage = 'R:/# Python 3.8/Python Saves/Games/Images/Prestige.gif'
-tick = 'R:/# Python 3.8/Python Saves/Games/Images/Tick.gif'
-tick2 = 'R:/# Python 3.8/Python Saves/Games/Images/Tick2.gif'
-yes2 = 'R:/# Python 3.8/Python Saves/Games/Images/YesPic.gif'
-no2 = 'R:/# Python 3.8/Python Saves/Games/Images/NoPic.gif'
+alienimage = 'images/Alien.gif'
+bulletimage = 'images/Bullet.gif'
+playerimage = 'images/Rocket.gif'
+bulletspeed = 'images/BulletSpeed.gif'
+rocketspeed = 'images/PlayerSpeed.gif'
+alien2image = 'images/AlienSpeed.gif'
+rewindtime = 'images/RewindTime.gif'
+oppositeimage = 'images/Opposite.gif'
+prestigeimage = 'images/Prestige.gif'
+tick = 'images/Tick.gif'
+tick2 = 'images/Tick2.gif'
+yes2 = 'images/YesPic.gif'
+no2 = 'images/NoPic.gif'
 ################################################################################ Sound
-powerup = 'R:/# Python 3.8/Python Saves/Games/Sound/Powerup.wav'
-incorrect = 'R:/# Python 3.8/Python Saves/Games/Sound/Wrong.wav'
-explosion = 'R:/# Python 3.8/Python Saves/Games/Sound/Explosion.wav'
-laser = 'R:/# Python 3.8/Python Saves/Games/Sound/Laser.wav'
-enemysound = 'R:/# Python 3.8/Python Saves/Games/Sound/Enemy.wav'
+powerup = 'sound/Powerup.wav'
+incorrect = 'sound/Wrong.wav'
+explosion = 'sound/Explosion.wav'
+laser = 'sound/Laser.wav'
+enemysound = 'sound/Enemy.wav'
 
 # Set up the screen
 wn = turtle.Screen()
 wn.title("Space Invaders by Glory! :)")
 wn.bgcolor("black")
-wn.bgpic('R:/# Python 3.8/Python Saves/Games/Images/background.gif')
+wn.bgpic('images/background.gif')
 
 # Draw border
 border_pen = turtle.Turtle()
