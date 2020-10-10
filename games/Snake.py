@@ -91,7 +91,7 @@ while True:
 
     # Check for a collision with the border
     if head.xcor() >290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:
-        winsound.PlaySound('R:/# Python 3.8/Python Saves/Games/Sound/SnakeSound.wav', winsound.SND_ASYNC)
+        winsound.PlaySound('assets/soundSnakeSound.wav', winsound.SND_ASYNC)
         time.sleep(1)
         head.goto(0, 0)
         head.direction = "stop"
@@ -114,7 +114,7 @@ while True:
 
     # Check for a collision with the food
     if head.distance(food) < 20:
-        winsound.PlaySound('R:/# Python 3.8/Python Saves/Games/Sound/PongSnakeSound.wav', winsound.SND_ASYNC)
+        winsound.PlaySound('assets/soundPongSnakeSound.wav', winsound.SND_ASYNC)
         # Move the food to a random spot
         x = random.randint(-290, 290)
         y = random.randint(-290, 290)
@@ -156,14 +156,14 @@ while True:
     # Check for head collisions with the body segments
     for segment in segments:
         if segment.distance(head) < 20:
-            winsound.PlaySound('R:/# Python 3.8/Python Saves/Games/Sound/SnakeSound.wav', winsound.SND_ASYNC)
+            winsound.PlaySound('assets/soundSnakeSound.wav', winsound.SND_ASYNC)
             time.sleep(1)
             head.goto(0, 0)
             head.direction = "stop"
 
             # Hide the segments
-            for segment in segments:
-                segment.goto(1000, 1000)
+            for segment_ in segments:
+                segment_.goto(1000, 1000)
 
             # Clear the segments list
             segments.clear()

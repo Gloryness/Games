@@ -6,31 +6,31 @@ import random
 import time
 
 ################################################################################ Images
-alienimage = 'images/Alien.gif'
-bulletimage = 'images/Bullet.gif'
-playerimage = 'images/Rocket.gif'
-bulletspeed = 'images/BulletSpeed.gif'
-rocketspeed = 'images/PlayerSpeed.gif'
-alien2image = 'images/AlienSpeed.gif'
-rewindtime = 'images/RewindTime.gif'
-oppositeimage = 'images/Opposite.gif'
-prestigeimage = 'images/Prestige.gif'
-tick = 'images/Tick.gif'
-tick2 = 'images/Tick2.gif'
-yes2 = 'images/YesPic.gif'
-no2 = 'images/NoPic.gif'
+alienimage = 'assets/images/Alien.gif'
+bulletimage = 'assets/images/Bullet.gif'
+playerimage = 'assets/images/Rocket.gif'
+bulletspeed = 'assets/images/BulletSpeed.gif'
+rocketspeed = 'assets/images/PlayerSpeed.gif'
+alien2image = 'assets/images/AlienSpeed.gif'
+rewindtime = 'assets/images/RewindTime.gif'
+oppositeimage = 'assets/images/Opposite.gif'
+prestigeimage = 'assets/images/Prestige.gif'
+tick = 'assets/images/Tick.gif'
+tick2 = 'assets/images/Tick2.gif'
+yes2 = 'assets/images/YesPic.gif'
+no2 = 'assets/images/NoPic.gif'
 ################################################################################ Sound
-powerup = 'sound/Powerup.wav'
-incorrect = 'sound/Wrong.wav'
-explosion = 'sound/Explosion.wav'
-laser = 'sound/Laser.wav'
-enemysound = 'sound/Enemy.wav'
+powerup = 'assets/sound/Powerup.wav'
+incorrect = 'assets/sound/Wrong.wav'
+explosion = 'assets/sound/Explosion.wav'
+laser = 'assets/sound/Laser.wav'
+enemysound = 'assets/sound/Enemy.wav'
 
 # Set up the screen
 wn = turtle.Screen()
 wn.title("Space Invaders by Glory! :)")
 wn.bgcolor("black")
-wn.bgpic('images/background.gif')
+wn.bgpic('assets/images/background.gif')
 
 # Draw border
 border_pen = turtle.Turtle()
@@ -265,7 +265,6 @@ class Prestige:
         timeplus += 5
         fourth_pen.clear()
         fourth_pen.write("Bullet Speed: {}   Player Speed: {}   Alien Speed: {}".format(bulletsspeed, playerspeed, alienspeed), align="center", font=("Cooper Black", 20, "normal"))
-
 
 def button(x, y):
     global coins

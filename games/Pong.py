@@ -2,7 +2,7 @@ import turtle
 import winsound
 import random
 colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow", "white"]
-filename = 'R:/# Python 3.8/Python Saves/Games/Sound/PongSnakeSound.wav'
+filename = 'assets/sound/PongSnakeSound.wav'
 
 
 """
@@ -143,7 +143,7 @@ while True:
         ball.goto(0, 0)
         ball.dx *= -1
         score_a += 1
-        winsound.PlaySound('R:/# Python 3.8/Python Saves/Games/Sound/PongSound.wav', winsound.SND_ASYNC)
+        winsound.PlaySound('assets/sound/PongSound.wav', winsound.SND_ASYNC)
         pen.clear()
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Cooper Black", 24, "normal"))
         if score_a > 1:
@@ -178,7 +178,7 @@ while True:
         ball.goto(0, 0)
         ball.dx *= -1
         score_b += 1
-        winsound.PlaySound('R:/# Python 3.8/Python Saves/Games/Sound/PongSound.wav', winsound.SND_ASYNC)
+        winsound.PlaySound('assets/sound/PongSound.wav', winsound.SND_ASYNC)
         pen.clear()
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Cooper Black", 24, "normal"))
         if score_b > 1:
