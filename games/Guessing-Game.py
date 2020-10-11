@@ -7,19 +7,6 @@ import time
 rc = random.choice
 rd = random.randint
 
-def loop(tasks=1, breaks=0, *args, **kwargs):
-    """
-    Loop a function X amount of times
-
-    :param tasks: Amount of times to loop the function
-    :param breaks: The amount of time to wait between each loop.
-    """
-    def wrapper(original_func, *args, **kwargs):
-        for i in range(tasks):
-            original_func(*args, **kwargs)
-            time.sleep(breaks)
-    return wrapper
-
 class Games:
     """
     This class holds all the games you can play.
@@ -125,11 +112,11 @@ class Games:
                                                                         'help', 'dir', 'method', 'input', 'exit', 'open', 'byte'
                                                                        ] + keyword.kwlist))), dir(__builtins__))
         ]
-        
+
         output = {}
         correct_answers = []
         is_second = False
-        
+
         if type(input_type()) == str:
             keywords.append('list')
             # You could say this is an inefficient way of doing it, but I can't really use the requests
@@ -236,6 +223,19 @@ class Games:
                     if tries == 1:
                         print(f"Hint: One of the functions starts "
                               f"with \'{correct_answers[0] if type(correct_answers) == str else correct_answers[0][0]}\'.")
+
+def loop(tasks=1, breaks=0, *args, **kwargs):
+    """
+    Loop a function X amount of times
+
+    :param tasks: Amount of times to loop the function
+    :param breaks: The amount of time to wait between each loop.
+    """
+    def wrapper(original_func, *args, **kwargs):
+        for i in range(tasks):
+            original_func(*args, **kwargs)
+            time.sleep(breaks)
+    return wrapper
 
 def askHowManyLoops(game):
     while True:
