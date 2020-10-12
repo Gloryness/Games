@@ -19,9 +19,6 @@ class Games:
     def __iter__(self):
         return iter(self.games)
 
-    def __next__(self):
-        return next(self.games)
-
     def __len__(self):
         return len(self.games)
 
