@@ -12,7 +12,7 @@ class Games:
     This class holds all the games you can play.
     """
     def __init__(self):
-        self.games = [eval(f'self.{function}', {"self": self}) # Since it cannot find "self", we must provide it manually.
+        self.games = [getattr(self, function)
                       for function in filter(lambda x: not (x.startswith('_')), dir(Games))]
                       # Finding all methods that don't start with '_' (dunder methods or private methods)
 
@@ -152,7 +152,7 @@ class Games:
 
             for function in keywords:
                 func_no_params = f'{function}({input_})'
-                func_params = f'{function}({input_}, {second_param})'
+                func_params = f'{function}({input_}, {second_param})' # For functions like divmod() and max() / min() they sometimes need 2 parameters, so here it provides a way to add a second param if cannot use one.
                 if (a := try_convert(func_no_params)) or (try_convert(func_params)):
                     if a:
                         is_second = False
@@ -205,7 +205,8 @@ class Games:
 
         print([input_ if not is_second else (input_, second_param)][0], '--------------------------->',
               [output_result if not is_second else output_result[0]][0])
-        tries = 5
+
+        tries = 5 # Maximum of 5 tries to guess the answer.
         while tries > 0:
             answer = input("Name the function used to get the result: ").lower()
             if answer in correct_answers:
@@ -214,7 +215,7 @@ class Games:
             else:
                 tries -= 1
                 if not bool(tries):
-                    print(f"The correct answer was {' or '.join(correct_answers)}")
+                    print(f"The correct answer was {' or '.join(correct_answers)}") # If there was more than one correct answer, the ' or ' is there to do the job.
                 else:
                     print(f"Incorrect. {tries} tries left!")
                     if tries == 1:
@@ -235,15 +236,20 @@ def loop(tasks=1, breaks=0, *args, **kwargs):
     return wrapper
 
 def askHowManyLoops(game):
+    """
+    Asks for an integer of how many times would you like to play {game} and then returns it.
+    """
     while True:
         try:
             loop_times = int(input(f"\nHow many times would you like to play {game}? "))
             return loop_times
         except ValueError:
-            print("Incorrect response, try again.")
-            continue
+            print("Incorrect response, try again."); continue
 
 def backToMenu():
+    """
+    A simple function that returns a boolean depending if you want to go back to the menu or not.
+    """
     while True:
         try:
             back = int(input("\nBack to Menu?\nNo [0]\nYes [1]\n"))
@@ -256,6 +262,9 @@ def backToMenu():
             return False
 
 def openMenu():
+    """
+    This function is used to open the menu.
+    """
     while True:
         print("\n--- Menu ---")
         try:
