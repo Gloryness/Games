@@ -1,5 +1,5 @@
 # Games
-These are all the games I've coded!
+These are all the games I've programmed!
 
 # Installation
 Python 3.8+ recommended.
