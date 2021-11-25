@@ -9,9 +9,9 @@ Clone the repo using git:
 $ git clone https://github.com/Gloryness/Games.git
 ```
 
-## Review
+# Review
 
-**-- Guessing Game --**
+## Guessing Game
 
 I first got the idea to do this in a computer science lesson when I was asked to make a Random Number generator and you had to guess the number.
 
